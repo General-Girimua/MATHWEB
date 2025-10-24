@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathletica | University Mathematics Club</title>
+    <title>Mathletica | Mathematics Club</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Base Styles */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -26,12 +27,14 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         /* Header */
@@ -58,19 +61,29 @@
         }
         
         .logo i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--secondary);
         }
         
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
         }
         
         nav a {
@@ -107,18 +120,18 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 6rem 0;
+            padding: 4rem 0;
             text-align: center;
         }
         
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
             font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto 2rem;
         }
@@ -127,13 +140,14 @@
             display: inline-block;
             background-color: var(--secondary);
             color: white;
-            padding: 12px 30px;
+            padding: 12px 25px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
             border: none;
             cursor: pointer;
+            margin: 5px;
         }
         
         .btn:hover {
@@ -145,7 +159,6 @@
         .btn-outline {
             background-color: transparent;
             border: 2px solid white;
-            margin-left: 15px;
         }
         
         .btn-outline:hover {
@@ -155,16 +168,16 @@
         
         /* Sections */
         section {
-            padding: 5rem 0;
+            padding: 3rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1rem;
             position: relative;
@@ -190,14 +203,18 @@
         
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             align-items: center;
         }
         
+        .about-text {
+            width: 100%;
+        }
+        
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
@@ -207,6 +224,7 @@
         }
         
         .about-image {
+            width: 100%;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -226,8 +244,8 @@
         /* Research Section */
         .research-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .research-card {
@@ -264,7 +282,7 @@
         }
         
         .research-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
@@ -303,14 +321,14 @@
         
         .resources-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
         
         .resource-card {
             background-color: white;
             border-radius: 10px;
-            padding: 2rem;
+            padding: 1.5rem;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s;
@@ -321,13 +339,13 @@
         }
         
         .resource-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 1.5rem;
         }
         
         .resource-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--primary);
         }
@@ -339,14 +357,18 @@
         
         /* Challenge Section */
         .challenge-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             align-items: center;
         }
         
+        .challenge-text {
+            width: 100%;
+        }
+        
         .challenge-text h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
             color: var(--primary);
         }
@@ -356,6 +378,7 @@
         }
         
         .challenge-image {
+            width: 100%;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -372,11 +395,11 @@
             background: linear-gradient(135deg, var(--primary), var(--dark));
             color: white;
             text-align: center;
-            padding: 5rem 0;
+            padding: 3rem 0;
         }
         
         .cta h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
         }
         
@@ -388,22 +411,22 @@
         
         .cta-buttons {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 1rem;
-            flex-wrap: wrap;
         }
         
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 2rem;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            grid-template-columns: 1fr;
+            gap: 2rem;
             margin-bottom: 2rem;
         }
         
@@ -474,52 +497,124 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .challenge-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-image,
-            .challenge-image {
-                order: -1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav ul {
-                gap: 1rem;
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .hero {
+                padding: 5rem 0;
             }
             
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 2.3rem;
+            }
+            
+            .about-content,
+            .challenge-content {
+                flex-direction: row;
+            }
+            
+            .about-text,
+            .challenge-text,
+            .about-image,
+            .challenge-image {
+                width: 48%;
+            }
+            
+            .research-cards,
+            .resources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
             }
         }
         
-        @media (max-width: 576px) {
-            .hero {
-                padding: 4rem 0;
+        /* Desktop Styles */
+        @media (min-width: 992px) {
+            .logo h1 {
+                font-size: 1.8rem;
             }
             
             .hero h2 {
-                font-size: 2rem;
+                font-size: 3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .research-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .resources-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            nav ul {
+                gap: 2rem;
+            }
+        }
+        
+        /* Mobile Navigation */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark);
+                padding: 1rem 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            nav.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            nav li {
+                width: 100%;
+                text-align: center;
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            nav li:last-child {
+                border-bottom: none;
             }
             
             .btn {
                 display: block;
-                margin: 10px auto;
-                width: 80%;
+                width: 100%;
                 max-width: 250px;
+                margin: 10px auto;
             }
             
             .btn-outline {
@@ -537,7 +632,12 @@
                     <i class="fas fa-square-root-alt"></i>
                     <h1>Mathletica</h1>
                 </div>
-                <nav>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#research">Research</a></li>
@@ -733,6 +833,22 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mainNav.classList.remove('active');
+            });
+        });
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
